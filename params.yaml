@@ -1,0 +1,27 @@
+base:
+  random_state: 42
+
+data_load:
+  dataset_csv: 'data/raw/car_price_prediction.csv'
+
+
+featurize:
+  features_path: 'data/processed/features.csv'
+  target_column: 'PRICE'
+
+
+data_split:
+  trainset_path: 'data/processed/train_features.csv'
+  testset_path: 'data/processed/train_features.csv'
+
+
+train:
+  n_estimators: 100
+  n_jobs: 1
+  max_leaf_nodes: 2
+  model_path: 'models/model.joblib'
+
+
+evaluate:
+  reports_dir: 'reports/figures/'
+  reg_plot: 'regplot.jpg'

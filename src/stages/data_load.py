@@ -3,8 +3,8 @@ import yaml
 import os
 
 
-os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines')
 def data_load() -> None:
+    os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines')
     with open('params.yaml') as config_:
         config__ = yaml.safe_load(config_)
 

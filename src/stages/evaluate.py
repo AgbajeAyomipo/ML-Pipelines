@@ -12,8 +12,8 @@ import joblib
 plt.style.use('fivethirtyeight')
 
 
-os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines')
 def evaluate() -> None:
+    os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines')
     with open('params.yaml') as config_:
         config__ = yaml.safe_load(config_)
     

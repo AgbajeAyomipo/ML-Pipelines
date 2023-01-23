@@ -9,9 +9,8 @@ import yaml
 import joblib
 import os
 
-
-os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines')
 def train_() -> None:
+    os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines')
     with open('params.yaml') as config_:
         config__ = yaml.safe_load(config_)
     

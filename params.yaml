@@ -2,7 +2,7 @@ base:
   random_state: 42
 
 data_load:
-  dataset_csv: data/raw/car_price_prediction.csv
+  dataset_csv: 'data/raw/car_price_prediction.csv'
 
 
 featurize:

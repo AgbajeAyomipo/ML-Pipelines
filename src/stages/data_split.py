@@ -5,8 +5,9 @@ from sklearn.model_selection import train_test_split, cross_val_score, GridSearc
 from sklearn.preprocessing import MinMaxScaler
 import os
 
-os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines')
+
 def data_split() -> None:
+    os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines')
     with open('params.yaml') as config_:
         config__ = yaml.safe_load(config_)
 

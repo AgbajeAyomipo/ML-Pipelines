@@ -1,0 +1,12 @@
+schema: '2.0'
+stages:
+  data_load:
+    cmd: python src/stages/data_load.py
+  featurize:
+    cmd: python src/stages/featurize.py
+  data_split:
+    cmd: python src/stages/data_split.py
+  train_stage:
+    cmd: python src/stages/train.py
+  evaluation:
+    cmd: python src/stages/evaluate.py

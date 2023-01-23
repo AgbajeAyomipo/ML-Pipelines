@@ -1,6 +1,8 @@
 import pandas as pd
 import yaml
+import os
 
+os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines/notebooks')
 def featurize() -> None:
 
     with open('../params.yaml') as config_:

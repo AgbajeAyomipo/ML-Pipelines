@@ -7,9 +7,12 @@ import seaborn as sns
 import pandas as pd
 import yaml
 import numpy as np
+import os
 import joblib
 plt.style.use('fivethirtyeight')
 
+
+os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines/notebooks')
 def evaluate() -> None:
     with open('../params.yaml') as config_:
         config__ = yaml.safe_load(config_)

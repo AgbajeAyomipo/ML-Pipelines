@@ -7,8 +7,10 @@ from xgboost import XGBRegressor
 import pandas as pd
 import yaml
 import joblib
+import os
 
 
+os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines/notebooks')
 def train_() -> None:
     with open('../params.yaml') as config_:
         config__ = yaml.safe_load(config_)

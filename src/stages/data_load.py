@@ -1,7 +1,9 @@
 import pandas as pd
 import yaml
+import os
 
 
+os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines/notebooks')
 def data_load() -> None:
     with open('../params.yaml') as config_:
         config__ = yaml.safe_load(config_)

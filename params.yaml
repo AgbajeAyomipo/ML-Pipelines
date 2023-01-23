@@ -2,23 +2,23 @@ base:
   random_state: 42
 
 data_load:
-  dataset_csv: 'C:/Users/Ayo Agbaje/Desktop/ML-Pipelines/data/raw/car_price_prediction.csv'
+  dataset_csv: 'data/raw/car_price_prediction.csv'
 
 
 featurize:
-  features_path: 'C:/Users/Ayo Agbaje/Desktop/ML-Pipelines/data/processed/features.csv'
+  features_path: 'data/processed/features.csv'
   target_column: 'PRICE'
 
 
 data_split:
-  trainset_path: 'C:/Users/Ayo Agbaje/Desktop/ML-Pipelines/data/processed//train_features.csv'
-  testset_path: 'C:/Users/Ayo Agbaje/Desktop/ML-Pipelines/data/processed//test_features.csv'
+  trainset_path: 'data/processed//train_features.csv'
+  testset_path: 'data/processed//test_features.csv'
 
 train:
   n_estimators: 100
   n_jobs: 1
   max_leaf_nodes: 2
-  model_path: 'C:/Users/Ayo Agbaje/Desktop/ML-Pipelines/models/model.joblib'
+  model_path: 'models/model.joblib'
 
 
 evaluate:

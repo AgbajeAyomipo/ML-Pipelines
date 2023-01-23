@@ -27,7 +27,10 @@ def evaluate() -> None:
     result_ = np.sqrt(result_)
     print(f"Mean Squared Error {result_}")
 
-    
+    plt.figure(figsize = (10,6))
+    sns.scatterplot(x = y_test, y = preds_)
+    plt.savefig(config__['evaluate']['reports_dir'] + config__['evaluate']['scatterplot'])
+    print('Reports saved to reports/figures')
 
     # print(X_test.shape, y_test.shape)
 

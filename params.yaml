@@ -23,4 +23,4 @@ train:
 
 evaluate:
   reports_dir: '../reports/figures/'
-  reg_plot: 'regplot.jpg'
+  scatterplot: 'scatterplot.jpg'

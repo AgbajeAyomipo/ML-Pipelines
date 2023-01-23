@@ -10,9 +10,9 @@ import joblib
 import os
 
 
-os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines/notebooks')
+os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines')
 def train_() -> None:
-    with open('../params.yaml') as config_:
+    with open('params.yaml') as config_:
         config__ = yaml.safe_load(config_)
     
     _train = pd.read_csv(config__['data_split']['trainset_path'])

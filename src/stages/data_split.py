@@ -5,9 +5,9 @@ from sklearn.model_selection import train_test_split, cross_val_score, GridSearc
 from sklearn.preprocessing import MinMaxScaler
 import os
 
-os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines/notebooks')
+os.chdir('C:/Users/Ayo Agbaje/Desktop/ML-Pipelines')
 def data_split() -> None:
-    with open('../params.yaml') as config_:
+    with open('params.yaml') as config_:
         config__ = yaml.safe_load(config_)
 
     df_ = pd.read_csv(config__['featurize']['features_path'])

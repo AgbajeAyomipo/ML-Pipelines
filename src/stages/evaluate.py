@@ -6,30 +6,30 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import yaml
+import numpy as np
 import joblib
+plt.style.use('fivethirtyeight')
 
 def evaluate() -> None:
     with open('../params.yaml') as config_:
         config__ = yaml.safe_load(config_)
     
-    feature_ = config__['featurize']['features_path']
-    X_train = pd.read_csv(config__['data_split']['trainset_path'])
-    X_test = pd.read_csv(config__['data_split']['testset_path'])
-    y_train = X_train[config__['featurize']['target_column']]
-    y_test = X_test[config__['featurize']['target_column']]
-
-    scale_ = MinMaxScaler(feature_range=(0,1))
-    scale_.fit(X_train)
-    X_train = scale_.transform(X_train)
-    X_test = scale_.transform(X_test) 
+    _train = pd.read_csv(config__['data_split']['trainset_path'])
+    _test = pd.read_csv(config__['data_split']['testset_path'])
+   
+    X_test = _test[_test.columns[0:-1]].values
+    y_test = _test['PRICE'].values
 
     model_ = joblib.load(config__['train']['model_path'])
     preds_ = model_.predict(X_test)
 
-    plt.figure(figsize = (10,6))
-    sns.regplot(x = preds_, y = y_test, line_kws = {'color': 'blue'}, scatter_kws = {'color': 'red'})
+    result_ = mean_squared_error(y_true=y_test, y_pred=preds_)
+    result_ = np.sqrt(result_)
+    print(f"Mean Squared Error {result_}")
 
-    plt.savefig(config__['evaluate']['reports_dir'] + ['regplot'])
+    
+
+    # print(X_test.shape, y_test.shape)
 
     if __name__ == '__main__':
 

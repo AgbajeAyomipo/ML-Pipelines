@@ -7,8 +7,18 @@ def featurize() -> None:
         config__ = yaml.safe_load(config_)
 
     df_ = pd.read_csv(config__['data_load']['dataset_csv'])
+    df_['PRICE'] = df_['Price']
+    df_ = df_.drop('Price', axis = 1)
     df_ = df_.sort_values('PRICE', ascending = False).reset_index().drop('index', axis = 1)
     df_ = df_.iloc[3:, :]
+    
+    def levy_(annot_):
+        if annot_ == '-':
+            return 0
+        else:
+            return int(annot_)
+
+    df_['Levy'] = df_['Levy'].apply(levy_)
 
     def engine_volume(annot_):
         if ' ' in annot_:

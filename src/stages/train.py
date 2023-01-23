@@ -13,15 +13,12 @@ def train_() -> None:
     with open('../params.yaml') as config_:
         config__ = yaml.safe_load(config_)
     
-    X_train = pd.read_csv(config__['data_split']['trainset_path']).drop('PRICE', axis = 1)
-    X_test = pd.read_csv(config__['data_split']['testset_path']).drop('PRICE', axis = 1)
-    y_train = X_train[config__['featurize']['target_column']]
-    y_test = X_test[config__['featurize']['target_column']]
-
-    scale_ = MinMaxScaler(feature_range=(0,1))
-    scale_.fit(X_train)
-    X_train = scale_.transform(X_train)
-    X_test = scale_.transform(X_test) 
+    _train = pd.read_csv(config__['data_split']['trainset_path'])
+    _test = pd.read_csv(config__['data_split']['testset_path'])
+   
+    X_train = _train[_train.columns[0:-1]].values
+    X_test = _test[_test.columns[0:-1]].values
+    y_train = _train['PRICE'].values
 
     rfr = RandomForestRegressor(
         n_estimators=config__['train']['n_estimators'],

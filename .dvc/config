@@ -1,6 +1,8 @@
 [core]
-    remote = my_remote
+    remote = remote
 ['remote "newremote"']
     url = /tom/jerry
 ['remote "my_remote"']
     url = ../storage_
+['remote "remote"']
+    url = ../remote_

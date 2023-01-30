@@ -8,3 +8,5 @@ stages:
     cmd: python src/stages/data_split.py
   evaluate:
     cmd: python src/stages/evaluate.py
+  train:
+    cmd: python src/stages/train.py

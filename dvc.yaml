@@ -11,7 +11,7 @@ stages:
     cmd: python src/stages/evaluate.py
     deps:
     - data/processed/features.csv
-    - models/model.pkl
+    - models/model.joblib
     - src/stages/evaluate.py
     outs:
     - eval/importance.png

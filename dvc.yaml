@@ -7,7 +7,19 @@ stages:
     cmd: python src/stages/data_split.py
   train:
     cmd: python src/stages/train.py
-    outs: 
-    - models/model.joblib
+
   evaluate:
     cmd: python src/stages/evaluate.py
+    deps:
+    - data/processed/features.csv
+    - models/model.pkl
+    - src/stages/evaluate.py
+    outs:
+    - eval/importance.png
+    - eval/live/plots:
+        cache: false
+    - eval/prc:
+        cache: false
+    metrics:
+    - eval/live/metrics.json:
+        cache: false

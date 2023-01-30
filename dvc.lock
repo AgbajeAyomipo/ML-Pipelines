@@ -10,3 +10,7 @@ stages:
     cmd: python src/stages/evaluate.py
   train:
     cmd: python src/stages/train.py
+    outs:
+    - path: models/model.joblib
+      md5: 6110e765052f8ef36b0e81ecc989ba76
+      size: 121173898
